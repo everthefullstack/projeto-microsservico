@@ -1,0 +1,37 @@
+version: "3.9"
+
+services: 
+
+  db-projeto-microsservico:
+    container_name: db_projeto_microsservico
+    build:
+      context: .
+      dockerfile: Dockerfile-pgsql
+    restart: always
+    ports:
+      - "5432:5432"
+    networks:
+      - projeto-microsservico
+    volumes:
+      - "db-projeto-microsservico:/var/lib/postgresql/data"
+  
+  app-projeto-microsservico:
+    container_name: app_projeto_microsservico
+    build:
+      context: .
+      dockerfile: Dockerfile-app
+    restart: always
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db-projeto-microsservico
+    networks:
+      - projeto-microsservico
+
+volumes:
+  db-projeto-microsservico:
+    driver: local
+
+networks:
+  projeto-microsservico:
+    driver: bridge

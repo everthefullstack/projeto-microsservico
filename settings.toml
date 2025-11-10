@@ -1,0 +1,15 @@
+[default]
+
+
+[testing]
+    APP_NAME = "projeto_microsservico_testing"
+    DATABASE_URL = "postgresql+psycopg2://teste:teste@localhost:5432/teste"
+
+[development]
+    APP_NAME = "projeto_microsservico_development"
+    DATABASE_URL = "postgresql+psycopg2://teste:teste@db_projeto_microsservico:5432/teste"
+
+[production]
+    APP_NAME = "projeto_microsservico_production"
+    DATABASE_URL = "postgresql+psycopg2://teste:teste@db_projeto_microsservico:5432/teste"
+    
