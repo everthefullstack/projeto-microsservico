@@ -36,17 +36,17 @@ projeto_microsservico
 
 ## Explicação sobre o desenvolvimento da solução
 
-O desenvolvimento inicial da aplicação não tem complicações, visto que é um microsserviço com apenas dois endpoints.
-Fiz a utilização da Clean Architecture pois facilita a separação do domínio da aplicação dos módulos utilizados.
-Para a manutenção é muito bom, pois caso exista a necessidade de trocar de tecnologia, é possível fazer facilmente, visto que praticamente tudo é desacoplado.
-A dificuldade surgiu nas tarefas bônus.
-Na primeira, onde devemos ordenar pela localização, pesquisei fórmulas que pudessem me ajudar a calcular e escolhi a de Haversine,
-que tem uma boa precisão, uma performance rápida e ja é amplamente utilizada para geolocalização. Sobre seu funcionamento, em resumo
-ela é uma equação para calcular a distancia entre dois pontos em uma esfera com base na latitude e longitude. 
-Na segunda, onde devemos buscar documentos não mais por palavra chave, e sim por expressão, tive de pesquisar como isso era feito e descobri o Full Text Search.
-Em resumo, é um mecanismo que permite buscar palavras, frases ou expressões em grandes volumes de texto, performando muito melhor que o LIKE ou o ILIKE.
-Esse mecanismo entende as variações linguísticas, logo, se fizer uma busca por um termo "Matemática", pode encontrar também "Matemático", "Matematicamente", etc.
-No banco de dados Postgresql(que eu utilizei), existe todo um aparato para fazer esse tipo de mecanismo de busca.
+O desenvolvimento inicial da aplicação não tem complicações, visto que é um microsserviço com apenas dois endpoints.\
+Fiz a utilização da Clean Architecture pois facilita a separação do domínio da aplicação dos módulos utilizados.\
+Para a manutenção é muito bom, pois caso exista a necessidade de trocar de tecnologia, é possível fazer facilmente, visto que praticamente tudo é desacoplado.\
+A dificuldade surgiu nas tarefas bônus.\
+Na primeira, onde devemos ordenar pela localização, pesquisei fórmulas que pudessem me ajudar a calcular e escolhi a de Haversine,\
+que tem uma boa precisão, uma performance rápida e ja é amplamente utilizada para geolocalização. Sobre seu funcionamento, em resumo\
+ela é uma equação para calcular a distancia entre dois pontos em uma esfera com base na latitude e longitude. \
+Na segunda, onde devemos buscar documentos não mais por palavra chave, e sim por expressão, tive de pesquisar como isso era feito e descobri o Full Text Search.\
+Em resumo, é um mecanismo que permite buscar palavras, frases ou expressões em grandes volumes de texto, performando muito melhor que o LIKE ou o ILIKE.\
+Esse mecanismo entende as variações linguísticas, logo, se fizer uma busca por um termo "Matemática", pode encontrar também "Matemático", "Matematicamente", etc.\
+No banco de dados Postgresql(que eu utilizei), existe todo um aparato para fazer esse tipo de mecanismo de busca.\
 
 ## Pré-requisitos
 
@@ -65,10 +65,10 @@ git clone https://github.com/everthefullstack/projeto_microsservico
 
 Para construir e executar a aplicação usando Docker, siga os passos abaixo:
 
-Escolha qual ambiente você quer usar. Baseado no ambiente, algumas configurações são diferentes.
-As configurações em default, serão válidas para todos os ambientes.
-Dentro do arquivo settings.toml existem as configurações que serão usadas para cada ambiente.
-Por exemplo, se usar o development, o banco de dados é X, se for production é Y.
+Escolha qual ambiente você quer usar. Baseado no ambiente, algumas configurações são diferentes.\
+As configurações em default, serão válidas para todos os ambientes.\
+Dentro do arquivo settings.toml existem as configurações que serão usadas para cada ambiente.\
+Por exemplo, se usar o development, o banco de dados é X, se for production é Y.\
 Para isso, altere o valor da variável dentro do arquivo Dockerfile-app, como por exemplo:
 
 ```bash
@@ -101,6 +101,11 @@ Para fazer uma carga de dados inicial:
 python tests/carga_inicial.py
 ```
 
+Para executar os teste:
+
+```bash
+pytest -s --cache-clear
+```
 
 ## Possíveis melhorias
 
