@@ -46,7 +46,7 @@ ela é uma equação para calcular a distancia entre dois pontos em uma esfera c
 Na segunda, onde devemos buscar documentos não mais por palavra chave, e sim por expressão, tive de pesquisar como isso era feito e descobri o Full Text Search.\
 Em resumo, é um mecanismo que permite buscar palavras, frases ou expressões em grandes volumes de texto, performando muito melhor que o LIKE ou o ILIKE.\
 Esse mecanismo entende as variações linguísticas, logo, se fizer uma busca por um termo "Matemática", pode encontrar também "Matemático", "Matematicamente", etc.\
-No banco de dados Postgresql(que eu utilizei), existe todo um aparato para fazer esse tipo de mecanismo de busca.\
+No banco de dados Postgresql(que eu utilizei), existe todo um aparato para fazer esse tipo de mecanismo de busca.
 
 ## Pré-requisitos
 
